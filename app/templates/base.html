@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'adminlte/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock title %}
+    </title>
+</head>
+<body>
+<main class="container">
+    {% block content %}
+
+    {% endblock content %}
+
+</main>
+
+{% block javascript %}
+{{block.super}}
+
+{% endblock javascript %}
+
+</body>
+</html>
