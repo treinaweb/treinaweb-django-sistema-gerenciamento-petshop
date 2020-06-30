@@ -27,7 +27,7 @@ Listagem de clientes
                     <td>{{cliente.data_nascimento}}</td>
                     <td>{{cliente.profissao}}</td>
                     <td>
-                        <a href="#">Editar</a>
+                        <a href="{% url 'editar_cliente' cliente.id %}">Editar</a>
                         <a href="#">Remover</a>
                     </td>
                 </tr>
