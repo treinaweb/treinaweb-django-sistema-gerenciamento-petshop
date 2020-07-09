@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load meus_filtros %}
+{% block title %}
+Cadastro de Consulta
+{% endblock title %}
+
+{% block content %}
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Cadastro de consulta</h3>
+    </div>
+    <div class="box-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form_consulta.motivo_consulta.errors }}
+                <label>Motivo da Consulta: </label>
+                {{ form_consulta.motivo_consulta|addclass:'form-control' }}
+            </div>
+
+            <div class="form-group">
+                {{ form_consulta.peso_atual.errors }}
+                <label>Peso atual: </label>
+                {{ form_consulta.peso_atual|addclass:'form-control' }}
+            </div>
+
+            <div class="form-group">
+                {{ form_consulta.medicamento_atual.errors }}
+                <label>Medicamento atual: </label>
+                {{ form_consulta.medicamento_atual|addclass:'form-control' }}
+            </div>
+            <div class="form-group">
+                {{ form_consulta.medicamentos_prescritos.errors }}
+                <label>Medicamentos Prescritos: </label>
+                {{ form_consulta.medicamentos_prescritos|addclass:'form-control' }}
+            </div>
+
+            <div class="form-group">
+                {{ form_consulta.exames_prescritos.errors }}
+                <label>Exames Prescritos: </label>
+                {{ form_consulta.exames_prescritos|addclass:'form-control' }}
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="Cadastrar" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
