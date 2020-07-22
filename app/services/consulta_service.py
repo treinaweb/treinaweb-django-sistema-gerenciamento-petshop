@@ -12,3 +12,7 @@ def cadastar_consulta(consulta):
 def listar_consultas(id):
     consultas = ConsultaPet.objects.filter(pet=id).all()
     return consultas
+
+def listar_consultas_pets(id):
+    consultas = ConsultaPet.objects.filter(pet__dono=id).all().order_by('-data')
+    return consultas

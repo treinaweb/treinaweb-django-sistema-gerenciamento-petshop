@@ -57,45 +57,45 @@ Listagem de cliente
         </div>
         <!-- /.col -->
         <div class="col-md-9">
-          <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#timeline" data-toggle="tab">Histórico</a></li>
-            </ul>
-            <div class="tab-content">
-              <!-- /.tab-pane -->
-              <div class="active tab-pane" id="timeline">
-                <!-- The timeline -->
-                <ul class="timeline timeline-inverse">
-                  <!-- timeline time label -->
-                  <li class="time-label">
-                        <span class="bg-red">
-                          10 Feb. 2014
-                        </span>
-                  </li>
-                  <!-- /.timeline-label -->
-                  <!-- timeline item -->
-                  <li>
-                    <i class="fa fa-user bg-aqua"></i>
-
-                    <div class="timeline-item">
-                      <span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-
-                      <h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
-                      </h3>
-                    </div>
-                  </li>
-                  <!-- END timeline item -->
-                  <li>
-                    <i class="fa fa-clock-o bg-gray"></i>
-                  </li>
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#timeline" data-toggle="tab">Histórico</a></li>
                 </ul>
-              </div>
-              <!-- /.tab-pane -->
-              <!-- /.tab-pane -->
+                <div class="tab-content">
+                    <div class="active tab-pane" id="timeline">
+                        <ul class="timeline timeline-inverse">
+                            <li class="time-label">
+                        <span class="bg-red">
+                          {% now "SHORT_DATE_FORMAT" %}
+                        </span>
+                            </li>
+
+                            {% for consulta in consultas %}
+                            <li>
+                                <i class="fa fa-paw bg-blue"></i>
+                                <div class="timeline-item">
+                                    <span class="time"> <i class="fa fa-calendar"></i>
+                                        {{consulta.data}}
+                                    </span>
+                                    <h3 class="timeline-header">
+                                        {{consulta.pet.nome}} realizou nova consulta
+                                    </h3>
+                                    <div class="timeline-body">
+                                        {{consulta.motivo_consulta}}
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+
+                            <!-- END timeline item -->
+
+                            <li>
+                                <i class="fa fa-clock-o bg-gray"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- /.nav-tabs-custom -->
         </div>
         <!-- /.col -->
       </div>
