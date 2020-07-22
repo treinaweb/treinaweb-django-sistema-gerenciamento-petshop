@@ -8,3 +8,7 @@ def cadastar_consulta(consulta):
                                              exames_prescritos=consulta.exames_prescritos)
 
     consulta_bd.save()
+
+def listar_consultas(id):
+    consultas = ConsultaPet.objects.filter(pet=id).all()
+    return consultas
