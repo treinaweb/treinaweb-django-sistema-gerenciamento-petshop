@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load meus_filtros %}
+{% block title %}
+Listagem de Consulta
+{% endblock title %}
+
+{% block content %}
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                <i class="fa fa-globe"></i> Consulta.
+                <small class="pull-right">Data: {{consulta.data}}</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col">
+            <b>Consulta</b>
+            <br>
+            <b>Data:</b> {{consulta.data}} <br>
+            <b>Motivo: </b> {{consulta.motivo_consulta}} <br>
+        </div>
+        <div class="col-sm-4 invoice-col">
+            <b>Pet</b>
+            <br>
+            <b>Nome: </b> {{consulta.pet.nome}} <br>
+            <b>Nascimento: </b> {{consulta.pet.nascimento}} <br>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <b>Dados da Consulta</b>
+            <br>
+            <b>Data:</b> {{consulta.data}} <br>
+            <b>Motivo: </b> {{consulta.motivo_consulta}} <br>
+            <b>Peso atual: </b> {{consulta.peso_atual}} <br>
+            <b>Medicamentos Prescritos: </b> {{consulta.medicamentos_prescritos}} <br>
+            <b>Exames Prescritos: </b> {{consulta.exames_prescritos}} <br>
+        </div>
+    </div>
+
+    <div class="row no-print">
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-primary pull-right" onclick="window.print();">
+                <i class="fa fa-print"> Imprimir</i>
+            </button>
+        </div>
+    </div>
+
+</section>
+
+{% endblock content %}

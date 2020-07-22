@@ -16,3 +16,7 @@ def listar_consultas(id):
 def listar_consultas_pets(id):
     consultas = ConsultaPet.objects.filter(pet__dono=id).all().order_by('-data')
     return consultas
+
+def listar_consulta(id):
+    consulta = ConsultaPet.objects.get(id=id)
+    return consulta
